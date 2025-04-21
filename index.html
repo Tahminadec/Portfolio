@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="index">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tahmina Rahman Dipty | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      background-color: #FBEFF3;
+    }
+
+    section {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: auto;
+      transition: all 0.3s ease;
+    }
+
+    .landing-container {
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 60px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .intro {
+      text-align: left;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .intro h1 {
+      font-size: 12rem;
+      color: #D8226C;
+    }
+
+    .intro p {
+      font-size: 1.0rem;
+      color: #6c757d;
+      margin-top: 10px;
+    }
+
+    .resume-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #D8226C;
+      border: 1px solid #D8226C;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .resume-button:hover {
+      background-color: #D8226C;
+      color: white;
+    }
+
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 60px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 20px;
+      transition: width 0.3s;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .nav-bar:hover {
+      width: 160px;
+      align-items: flex-start;
+      padding-left: 20px;
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: #FF69B4;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-bar span {
+      display: none;
+      margin-left: 8px;
+    }
+
+    .nav-bar:hover a span {
+      display: inline;
+    }
+
+    .about-section {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      justify-content: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .about-photo {
+      width: 210px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: #343a40;
+      max-width: 600px;
+    }
+
+    .education-section,
+    .experience-section,
+    .projects-section,
+    .certificates-section {
+      text-align: center;
+      margin-top: 60px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .about-section h2,
+    .education-section h2,
+    .experience-section h2,
+    .projects-section h2,
+    .certificates-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #FF69B4;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 50px auto;
+      padding-left: 30px;
+      max-width: 900px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(0, 0, 0, 0.1);
+      filter: blur(1px);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 30px 0;
+    }
+
+    .timeline-left {
+      width: 45%;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    .timeline-right {
+      width: 45%;
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    .timeline-left h3,
+    .timeline-right h4 {
+      color: #FF69B4;
+      margin-bottom: 5px;
+    }
+
+    .timeline-right ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: #6c757d;
+    }
+
+    .timeline-right ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  
+<div class="nav-bar">
+  <a href="#home">
+    <img src="https://img.icons8.com/ios-filled/24/000000/home.png" alt="Home Icon" />
+    <span>Home</span>
+  </a>
+  <a href="#me">
+    <img src="https://img.icons8.com/ios-filled/24/000000/user.png" alt="User Icon" />
+    <span>Me</span>
+  </a>
+  <a href="#webdesign">
+    <img src="https://img.icons8.com/ios-filled/24/000000/design.png" alt="Design Icon" />
+    <span>Web Design</span>
+  </a>
+</div>
+
+  <section id="home" class="landing-container">
+  <div class="content-wrapper">
+    <div class="intro">
+      <h1>HELLO!</h1>
+      <p>I am Tahmina Rahman Dipty, I'm a software engineer.</p>
+      
+    
+      <a href="CV_Resume.docx" target="_blank" class="resume-button">
+          Resume
+          <span>&rarr;</span>
+        </a>
+
+      <!-- Social Links -->
+      <div style="margin-top: 20px; display: flex; gap: 16px; align-items: center;">
+        <a href="https://www.linkedin.com/in/tahmina-rahman-1b0223296/" target="_blank" title="LinkedIn">
+          <img src="https://img.icons8.com/ios-filled/30/000000/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="mailto:tahminadec@gmail.com" title="Email">
+          <img src="https://img.icons8.com/ios-filled/30/000000/email.png" alt="Email" />
+        </a>
+        <a href="https://dribbble.com/Tdipty" target="_blank" title="Dribbble" class="social-icon">
+    <img src="https://img.icons8.com/ios-filled/30/000000/dribbble.png" alt="Dribbble" />
+  </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section id="me">
+    <div class="about-section">
+      <img src="me-removebg.png" alt="Tahmina Rahman Dipty" class="about-photo" />
+      <div class="about-text">
+        <h2>Let me Introduce myself</h2></br>
+        <p>I have a Bachelor’s degree in Computer Science from United International University.</p>
+        <p> I'm passionate about UI/UX design,building efficient and scalable software solutions, and constantly exploring new technologies to improve my craft.</p>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="education-section">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <h3>United International University</h3>
+            <p>Nov 2019 – March 2024</p>
+          </div>
+          <div class="timeline-right">
+            <h4>BSc in Computer Science and Engineering</h4></br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Work Experience -->
+    <div class="experience-section">
+      <h2>Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <h3>Early Learner's Assistant (English)</h3>
+            <p>January 2025 – Present<br>Part-time</p>
+          </div>
+          <div class="timeline-right">
+            <h4>BRAC Kumon Zigatola<br><small>23/C, Dream World Tower, Dhaka 1209</small></h4>
+            <ul>
+              <li>Graded and analyzed student work using the KUMON method</li>
+              <li>Assisted in class instruction and center management</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <h3>Junior Developer</h3>
+            <p>June 2024 – November 2024<br>Full-time</p>
+          </div>
+          <div class="timeline-right">
+            <h4>BETS Consulting Services Ltd<br><small>House-10, Road-135, Gulshan-01, Dhaka -1212</small></h4>
+            <ul>
+              <li>Developed and maintained GIS applications and databases</li>
+              <li>Ensured seamless data access, reporting, and technical support</li>
+              <li>Performed data querying and sorting on large databases using SQL Server</li>
+            </ul>
+          </div>
+        </div>
+      </div
+<!-- Certificates Section -->
+<section id="certificates" class="certificates-section" style="width: 100%; padding: 80px 0; color: #343a40; margin: 0;">
+  <h2 style="color: #FF69B4; text-align: center; margin-bottom: 60px;">Certificates</h2>
+  
+  <div style="display: flex; justify-content: center; align-items: flex-start; gap: 80px; flex-wrap: wrap; padding: 0 40px;">
+    
+    <!-- Certificate 1 -->
+    <div style="text-align: center; width: 220px;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/code.png" alt="Coding Icon" style="margin-bottom: 10px;" />
+      <div style="text-align: left;">
+        <h4 style="margin-bottom: 5px; font-size: 1rem;">UIU Coders Combat 2.0</h4>
+        <p style="font-size: 0.85rem; color: #555;">Coding Contest, UIU<br>Dec 2019</p>
+      </div>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div style="text-align: center; width: 220px;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/animation.png" alt="Animation Icon" style="margin-bottom: 10px;" />
+      <div style="text-align: left;">
+        <h4 style="margin-bottom: 5px; font-size: 1rem;">Cartoon Animation</h4>
+        <p style="font-size: 0.85rem; color: #555;">10 Minute School<br>Mar 2024</p>
+      </div>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div style="text-align: center; width: 220px;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/design.png" alt="UI/UX Icon" style="margin-bottom: 10px;" />
+      <div style="text-align: left;">
+        <h4 style="margin-bottom: 5px; font-size: 1rem;">UI/UX Guided Program</h4>
+        <p style="font-size: 0.85rem; color: #555;">Ostad<br>Aug 2023</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Web Design Section -->
+<section id="webdesign" style="text-align: center; padding: 100px 40px; background-color: #FBEFF3;">
+  <h2 style="color: #FF69B4; font-size: 2rem; margin-bottom: 40px;">Web Design</h2>
+  <img src="Pizza.png" alt="Pizza Web Design" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <img src="Pizza.png" alt="Pizza Web Design" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+  <img src="Pizza.png" alt="Pizza Web Design" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+</section>
